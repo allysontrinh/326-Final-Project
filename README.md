@@ -5,13 +5,21 @@
 ## Command to run: 
 #### npm start milestone-01 
 
-## The report touches upon these key topics:
+### The report touches upon these key topics:
 
 ## Overview
+#### Project's vision, how it solves real-world problem.
 ## Application Parts
+#### Three critical components of application.
 ## Data Requirements
+#### Top types of data our application will handle
 ## Wire Frames
+#### Sketches of four main screens of our application, their purpose and design rationale.
 ## Real-World Connection
+#### More detailed explanation about how application solves real-world issue. 
 ## Integrative Experience
+#### How this application represents our culminated academic and personal experiences. 
 ## Meet the Girls (About Us)
+#### Background about each group member of Girls in STAM. 
+
 
