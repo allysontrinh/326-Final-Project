@@ -43,7 +43,7 @@ li a {
     text-align: center;
     z-index: 22;
     padding: 14px 16px;
-    color: black;
+    color: #ffffff;
     transition: color .25s ease-in-out;
     margin-right: 64px;
 
@@ -79,12 +79,12 @@ img {
     width: 50%;
     height: 50%;
 }
-
+/* #959c98*/
 html,
 body {
     font-family: optima;
     margin: 0;
-    color: #959c98;
+    color: #8c6c14;
     margin-top: 50px;
 }
 /* to prevent content overlapping with nav-bar */
@@ -101,49 +101,145 @@ h3 {
 .card {
    /*  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); */
     transition: 0.3s;
+    width: 65%;
+    margin: 0 auto;
   }
   
-  .card:hover {
+.card:hover {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-  }
-  
-  .container {
-    padding: 2px 20px;
-  }
-
-/* p {
-    font-family: "Reenie Beanie", cursive;
-    text-align: left;
-    padding: 30px 100px;
 }
 
-.bolded {
-    font-family: optima;
-    font-weight: bold;
+.container {
+    padding: 8px 20px;
+    width: 800px;
+    height: 400px; 
+}
+
+.member-roles {
+    text-align: left;
+}
+
+.profiles {
+    float: left;
+    margin-right: 50px;
+}
+
+#sarah.profiles {
+    width: 225px;
+    height: 300px;
+}
+
+#tanishka.profiles {
+    width: 225px;
+    height: 300px;
+}
+
+#allyson.profiles {
+    width: 225px;
+    height: 300px;
+}
+
+#megan.profiles {
+    width: 225px;
+    height: 325px;
+}
+
+.name {
+    display: inline;
+    float: left;
+}
+
+#sarah.name {
+    width: 15%;
+    height: 20%;
+    margin-right: 10px;
+}
+
+#tanishka.name {
+    width: 35%;
+    height: 15%;
+}
+
+#allyson.name {
+    width: 20%;
+    height: 20%;
+}
+
+#megan.name {
+    width: 15%;
+    height: 10%;
+    margin-right: 10px;
+}
+
+.bios {
+    margin-right: 50px;
+}
+
+#sarah.bios {
+    margin-top: 50px;
+}
+
+#tanishka.bios {
+    margin-top: 40px;
+}
+
+#allyson.bios {
+    margin-top: 55px;
+}
+
+#megan.bios {
+    margin-top: 25px;
+}
+
+#login {
+    float: left;
+}
+
+#notebookview {
+    float: left;
+}
+
+.form-box {
+    background-color: #fff; 
+    padding: 15px; 
+    border-radius: 8px; 
+    width: 500px; 
+    margin: 0 auto;
+}
+
+form { 
+    max-width: 400px; 
+    margin: 0 auto; 
 } 
 
-table, th, td {
-    border-collapse: collapse;
-}
+input, 
+textarea { 
+    width: 100%; 
+    padding: 8px; 
+    margin-bottom: 12px; 
+    box-sizing: border-box; 
+    border-radius: 10px; 
+  
+} 
 
-th, td {
-    padding: 5px; 
-    text-align: left;
-}
+#submit { 
+    background-color: #78bf95; 
+    color: #fff; 
+    padding: 10px; 
+    border: none; 
+    border-radius: 25px; 
+    cursor: pointer; 
+    width: 100%; 
+    font-size: 15px; 
+    transition: .2s linear; 
+} 
+  
+#submit:hover { 
+    background-color: #0b3623; 
+    border: none; 
+    transform: translateY(-10px); 
+} 
 
-#names {
-    font-family: optima;
+.comments {
     text-align: center;
 }
-
-#bios {
-    font-family: "Reenie Beanie", cursive;
-    text-align: left;
-    padding: 30px 250px;
-}
-
-#hometown-row {
-    padding: 30px 250px;
-}*/
-
-

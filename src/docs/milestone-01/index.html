@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document Title</title>
+    <title> Welcome Home </title>
     <!-- CSS Stylesheets -->
     <link rel="stylesheet" href="styles.css">
     <!-- JavaScript Files -->
@@ -29,7 +29,7 @@
             </nav>
         </ul>
         <section id="team-name">
-            <img src = "Milestone1-GiS.png"/>
+            <img src = "images/Milestone1-GiS.png">
         </section>
     </header>
 
@@ -47,27 +47,44 @@
 
         <section id="application-parts">
             <h2>Application Parts</h2>
-            Identified by the id “application-parts,” describe at least three critical components of your application in separate paragraphs under this section, totaling 200-300 words. Ensure each application part discussed represents a primary functionality of your web application. 
+            The customizable notebook, or planner, is an integral component of Welcome Home, intended to allow users to write down and store their plans, assignments, or to-do tasks. The customizability of the notebook encourages user engagement and personal organization. Users will have the option to organize their notes in sections, much like popular note-taking apps like Notion or OneNote. Additional features like bookmarking, highlighting, and sticky notes makes note-taking fun, easily accessible, and aesthetically pleasing. Additionally, completing tasks within the notebook will reward the user with things like treats for their in-game pet, an additional sticky-note design, or a new pen. This further game-ifies task completion. 
+            Welcome Home’s character creator will allow users to feel at home in their virtual space. Whether it be by recreating a mini-them or making another version of themselves, the creator will allow users to enter their space virtually. Since Welcome Home’s main focus is to create a low-stress environment by game-ifying tasks, the user’s character will act as the main “game component”. The creator will involve customization of an avatar’s hair, skin, clothes, and accessories. After character creation, the user will be allowed to enter their virtual space. Additionally, they can choose to update their avatar at any point by going to the wardrobe component. Character creation is completely up to the user and encourages user-freedom. 
+            Lastly, browser-enabled notifications will help keep users on track with deadlines or reminders that they input into their calendar. There will be an option within the settings to turn off these notifications to keep user-freedom accessible. There will be additional optional configurations that the user can modify. By default, the notifications will occur the day and hour before the deadline inputted by the user. However, they can choose to make it occur multiple times within the week up until a minute before the deadline. Again, these configurations allow complete user freedom. 
         </section>
 
         <section id="data-requirements">
             <h2>Data Requirements</h2>
-            Structure this section to include an introduction, four main paragraphs detailing the top types of data your application will handle, and a conclusion, making up 600-700 words in total. Focus on high-level data needs rather than specific database designs or records. 
+            To effectively support the functionality of our application, our backend database will store various types of data critical for seamless user experience and efficient operation. 
+            Among the key data categories, the first pertains to login data, encapsulating essential user profile information alongside authentication credentials. Each user entry includes a unique username, ensuring individuality within the platform, coupled with contact details such as email or phone number for communication/user verification purposes. Authentication credentials, such as passwords, will be stored as well.
+            Task details represent another integral facet of our database, storing comprehensive information concerning each user-generated task. These entries encompass essential task attributes, including a title to succinctly describe the task, detailed descriptions for task specifics, and due dates/deadlines for completion. Moreover, users can categorize tasks by associating relevant tags or categories, facilitating organized task management and streamlined access. Task tracking ensures users maintain clarity and efficiency in their daily endeavors, fostering productivity and goal attainment.
+            Similarly, calendar events constitute a pivotal component within our database, mirroring the structure and attributes of tasks but tailored to accommodate event-related information. Each calendar event entry encompasses essential details such as event titles for easy identification, precise date and time specifications, location information to facilitate navigation, and comprehensive event descriptions elucidating pertinent details. Additionally, users can opt to set reminders for calendar events, ensuring timely notifications and proactive management, further enhancing user convenience and punctuality.
+            Character attributes serve as a unique feature within our application, allowing users to personalize their avatars through our intuitive character creator tool. These attributes encompass various visual elements and traits, enabling users to craft avatars reflective of their personalities or preferences. By enabling users to personalize their avatars, our application fosters a sense of identity and engagement, enhancing the overall user experience and immersion within the platform.
+            Lastly, settings data encapsulates user-specific preferences, empowering individuals to tailor their in-app experience according to their preferences. These settings encompass diverse options, ranging from aesthetic preferences such as light or dark mode to notification settings dictating the frequency and format of notifications received. By accommodating user preferences, our application ensures a customized and tailored experience for each user.
+            Our background database encompasses diverse data categories, ranging from essential login data to user-generated tasks, calendar events, character attributes, and in-app settings. By meticulously organizing and maintaining these data types, our application facilitates seamless user interaction, efficient task management, and personalized experiences, thereby enriching user engagement and satisfaction within the platform.
+
         </section>
 
         <section id="wire-frames">
             <h2>Wire Frames</h2>
-           Include four wire frames representing key views/screens of your application, along with a brief paragraph for each explaining its purpose and design rationale. You must be able to create an image from these wire frames in PNG, JPG, or GIF format to be included in the document using the [img] tag alongside each paragraph. This section should be 200-300 words in length, excluding HTML tags.
+                <p> The first image is a depiction of what Welcome Home’s log-in screen might look like. In order to facilitate a welcoming and cozy environment for users, it’s crucial that the first screen they see is able to visually showcase that. As such, the log-in screen could represent something familiar and inviting like a door to a house. 
+                    The next image gives us a look into the user’s “bedroom”, or whatever they define their safe space as. Here, users will be able to access multiple different assets and functionalities of the program, such as character creation (by selecting the closet) or their planner/notebook (by selecting the desk). The focus of this app is to reduce the stress of overwhelming stimuli, hence the desire for a more stripped down UI. With less visual clutter with buttons and prompts for users to look at, we hope to encapsulate a more intuitive user experience. 
+                    The third image is where many users will spend most of their time: the notebook view! Inspired by planner/task-management applications like notion, we hope to provide users with numerous options to make their task planning as easy and customizable as possible. 
+                    Lasty, our last image is an example of what Welcome Home’s character creation might look like. To make each user’s virtual home feel as personable as possible, a character creation feature was a must to include. Users would be able to toggle between different eye types, hairstyles, clothes, etc., while also being able to see what those changes look like on their character “in the mirror” in real time.
+                    </p>
+                <img id="login" src="images/login-wireframe-12.jpg">
+                <img id="homescreen" src="images/homescreen-wireframe-12.jpg">
+                <img id="notebookview" src="images/notebookview-wireframe-12.jpg">
+                <img id="charactercreation" src="images/character creation-wireframe-12.jpg">
         </section>
 
         <section id="real-world">
             <h2>Real-World Connection</h2>
-            This section, spanning 500-600 words, should elucidate how your application addresses a tangible real-world issue, supported by an introduction and conclusion. Use real-world examples as inspiration for this narrative, detailing the problem your project aims to resolve.
+            Our ‘virtual home’ gamifies the task of weekly planning and organization- its visual aspects create a low-stress and organized environment for task tracking. For example, a busy college student may have trouble keeping track of their project deadlines, job interviews, club meetings, grocery lists, chores, and social obligations. Using our application, the student would log-in to a cozy atmosphere and design their character. Next, they would move their character around the room, clicking on the calendar to add dates, on the fridge to add shopping lists, or on the notebook to add tasks to their virtual bullet journal. The user may be able to configure browser-enabled reminders and receive rewards as they complete tasks. Lastly, there will be a mindfulness aspect, where the user can click on a yoga mat to play meditation music or raise their virtual pet cat! We hope this virtual space will help people who struggle with task completion, forgetfulness, executive dysfunction, or need visual organizational aids. We also hope our application will incentivize and motivate people who are burnt out and change the connotation of todo lists from overwhelming to calming and manageable.
         </section>
 
         <section id="integrative-experience">
             <h2>Integrative Experience</h2>
-            In 500-600 words, detail how this project ties into the integrative experience requirements of your coursework and personal experiences. Discuss how your project is a culmination of your university education and personal growth, touching upon specific courses, semesters, and life experiences that contribute to the development of this project.
+            This application is a direct reflection of the Integrative Experience (IE) requirements. The development of such a game combines human-computer interaction, UI/UX design, and user-testing principles in the front-end development, while data-structures and algorithms, efficient data storage and retrieval, and efficient functionality are key parts of the backend. In addition to building upon previous concepts, this project allows each member of our team to build skills such as collaboration, innovation, and communication, and take leadership over their respective roles. Integrating general education and soft skills with previous more advanced computer science knowledge in a structured setting is a core aspect of the integrative learning experience. The last, and arguably most important aspect of the integrative experience; however, is the transformation of technical skills to solution-oriented applications. We are able to apply our critical thinking skills to solve a real-world issue, and hope to launch our application publicly to help those struggling with this common, yet important, problem with this stress-free, judgment-free, user-friendly, and readily-accessible organization aid. 
         </section>
 
         <aside>
@@ -77,23 +94,48 @@
                 <h2>Meet the Girls</h2>
                 <div class="card">
                     <div class="container">
-                        <p> <strong> Sarah Jang </strong> is a junior at UMass Amherst pursuing a bachelor’s in computer science. She started her college career as a chemist but switched to CICS her sophomore year. Most of her experience is in the front-end of app and web development, but she’s interested in exploring databases and back-end. She hopes to strengthen her collaboration and software engineering skills through meaningful hands-on work. Lastly, she hopes to pass CS311. </p>
+                        <h3 class="member-roles" id="backend"> Backend Specialist </h3>
+                        <img class="profiles" id="sarah" src="images/sarah-profile.jpeg">                        
+                        <img class="name" id="sarah" src="images/sarah-name.png"/> 
+                        <p class="bios" id="sarah"> is a junior at UMass Amherst pursuing a bachelor’s in computer science. She started her college career as a chemist but switched to CICS her sophomore year. Most of her experience is in the front-end of app and web development, but she’s interested in exploring databases and back-end. She hopes to strengthen her collaboration and software engineering skills through meaningful hands-on work. Lastly, she hopes to pass CS311. </p>
                     </div>
                     <div class="container">
-                        
-                        <p> <strong> Tanishka Indorekar </strong> is a senior at UMass Amherst, majoring in Computer Science and minoring in Business. She has a strong foundation in web-development, human-computer interaction, design, data systems, and business analytics. She also has strong leadership, teamwork, and communication skills through her experience in various organizations, internships, and volunteer initiatives. Over the years, she has fundraised for a non-profit school, worked on an Electronic Medical Record System, and founded the Digital Literacy Program to grow digital equity. She is an optimist and problem-solver, eager to be a part of the technological revolution. </p>
+                        <h3 class="member-roles" id="documentation"> Documentation Expert </h3>
+                        <img class="profiles" id="tanishka" src="images/tanishka-profile.jpeg">
+                        <img class="name" id="tanishka" src="images/tanishka-name.png"/> 
+                        <p class="bios" id="tanishka"> is a senior at UMass Amherst, majoring in Computer Science and minoring in Business. She has a strong foundation in web-development, human-computer interaction, design, data systems, and business analytics. She also has strong leadership, teamwork, and communication skills through her experience in various organizations, internships, and volunteer initiatives. Over the years, she has fundraised for a non-profit school, worked on an Electronic Medical Record System, and founded the Digital Literacy Program to grow digital equity. She is an optimist and problem-solver, eager to be a part of the technological revolution. </p>
                     </div>
                     <div class="container">
-                        <p> <strong> Allyson Trinh </strong> has always had an artistic eye, and is finally facilitating her desire to create through computer science. She is currently a third year computer science major at the University of Massachusetts Amherst discovering her enthusiasm and passion for UI/UX and front end development. While she is also open to broadening her learning with regards to back end/full stack development, she hopes to gain more experience creating projects that aim to thoughtfully cater to their users. </p>
+                        <h3 class="member-roles" id="frontend"> Frontend Lead </h3>
+                        <img class="profiles" id="allyson" src="images/allyson-profile.jpeg">
+                        <img class="name" id="allyson" src="images/allyson-name.png"/> 
+                        <p class="bios" id="allyson"> has always had an artistic eye, and is finally facilitating her desire to create through computer science. She is currently a third year computer science major at the University of Massachusetts Amherst discovering her enthusiasm and passion for UI/UX and front end development. While she is also open to broadening her learning with regards to back end/full stack development, she hopes to gain more experience creating projects that aim to thoughtfully cater to their users. </p>
                     </div>
                     <div class="container">
-                        <p> <strong> Megan Wong </strong> is a third year computer science student at UMass Amherst. </p>
+                        <h3 class="member-roles" id="database"> Database Aficionado </h3>
+                        <img class="profiles" id="megan" src="images/megan-profile.jpeg">
+                        <img class="name" id="megan" src="images/megan-name.png"/> 
+                        <p class="bios" id="megan"> is a third year computer science student at UMass Amherst. </p>
                     </div>
                 </div>
             </section>
         </aside>
-    </main>
-
+        <section id="feedback">
+            <div class="form-box"> 
+                <h2> Let us know what you think! </h2>
+                <form> 
+                    <textarea id="" placeholder="Add a comment" value=" "></textarea> 
+                    <div class="bttn">
+                        <input id="submit" type="submit" value="Send to the Girls">
+                    </div>
+                </form> 
+            </div>
+            <div class="comments">
+                <h2> Comments </h2>
+                <div id="comment-box"></div>
+            </div>
+        </section>
+    </main> 
     <footer>
         <!-- Footer content like copyright, links to privacy policy, etc. -->
     </footer>
