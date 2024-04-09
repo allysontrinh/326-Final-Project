@@ -1,7 +1,7 @@
 html{scroll-behavior:smooth}
 
 /* nav-bar */ 
-ul {
+.navbar {
     position: fixed;
     top: 0;
     width: 100%;
@@ -31,12 +31,12 @@ ul {
 }
 
 /* nav-bar alignment */
-li {
+.nav-link {
     float: left;
 }
 
 /* nav-bar elements */
-li a {
+.nav-link {
     display: block;
     position: relative;
     text-decoration: none;
@@ -124,22 +124,22 @@ h3 {
     margin-right: 50px;
 }
 
-#sarah.profiles {
+#sarah1.profiles {
     width: 225px;
     height: 300px;
 }
 
-#tanishka.profiles {
+#tanishka1.profiles {
     width: 225px;
     height: 300px;
 }
 
-#allyson.profiles {
+#allyson1.profiles {
     width: 225px;
     height: 300px;
 }
 
-#megan.profiles {
+#megan1.profiles {
     width: 225px;
     height: 325px;
 }
@@ -149,23 +149,23 @@ h3 {
     float: left;
 }
 
-#sarah.name {
+#sarah2.name {
     width: 15%;
     height: 20%;
     margin-right: 10px;
 }
 
-#tanishka.name {
+#tanishka2.name {
     width: 35%;
     height: 15%;
 }
 
-#allyson.name {
+#allyson2.name {
     width: 20%;
     height: 20%;
 }
 
-#megan.name {
+#megan2.name {
     width: 15%;
     height: 10%;
     margin-right: 10px;
@@ -175,19 +175,19 @@ h3 {
     margin-right: 50px;
 }
 
-#sarah.bios {
+#sarah3.bios {
     margin-top: 50px;
 }
 
-#tanishka.bios {
+#tanishka3.bios {
     margin-top: 40px;
 }
 
-#allyson.bios {
+#allyson3.bios {
     margin-top: 55px;
 }
 
-#megan.bios {
+#megan3.bios {
     margin-top: 25px;
 }
 
