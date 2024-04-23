@@ -1,0 +1,33 @@
+body {
+    background-image: url('/src/client/images/Notebook.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+  }
+
+  .styled-textbox{
+    width: 185px; /* Set the width of the textbox */
+    height: 240px; /* Set the height of the textbox */
+    margin: 10px; /* Set the margin around the textbox */
+    padding: 5px; /* Set the padding inside the textbox */
+    display: block; /* Make the textbox a block-level element */
+    float: left; /* Float the textbox to the left */
+    border-radius: 5px;
+    color: #333; /* Set the text color */
+    background-color: transparent; /* Set the background color */
+    font-family: "Lucida Handwriting", cursive; /* Set the font family */
+    /* border-color: transparent; */
+    overflow: hidden;
+    resize: none;
+    position: absolute; 
+  }
+  #page1 {
+    top: 20%; /* Move textbox1 50px from the top */
+    left: 23%; /* Move textbox1 50px from the left */
+  }
+
+  #page2 {
+    top: 20%; /* Move textbox1 50px from the top */
+    left: 50%; /* Move textbox1 50px from the left */
+
+  }
