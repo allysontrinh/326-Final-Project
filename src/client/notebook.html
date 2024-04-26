@@ -10,20 +10,21 @@
     <script type="module" src="/src/client/scripts/notebook.js" defer></script>
 </head>
 <body>
-    <div class="background"></div>
-    <div id="notebook">
-        <input type="text" id="entry-name" placeholder="Entry name">
-        <textarea id="page1" class="styled-textbox"></textarea>
-        <textarea id="page2" class="styled-textbox"></textarea>
-        <button id="create">New Page</button>
-        <button id="save">Save Button</button>
-        <button id="destroy">Delete Button</button>
-        <button id="dump">Delete All Entries</button>
-    </div>
     <div id="dropdown-box">
         <label for="dropdown">Reload A Page:</label>
         <select id="dropdown">
         </select>
+    </div>
+    <div id="options">
+        <input type="text" id="entry-name" placeholder="Entry name">
+        <button id="create">Create A New Page</button>
+        <button id="save">Save This Page</button>
+        <button id="destroy">Delete Selected Page</button>
+        <button id="dump">Delete All Entries</button>
+    </div>
+    <div class="notebook">
+        <textarea id="page1" class="styled-textbox"></textarea>
+        <textarea id="page2" class="styled-textbox"></textarea>
     </div>
 </body>
 <script src="//cdn.jsdelivr.net/npm/pouchdb@8.0.1/dist/pouchdb.min.js"></script>
