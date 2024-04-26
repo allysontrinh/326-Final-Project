@@ -67,22 +67,36 @@ function createDropdownOption(name){
  * before the window reloaded. 
  */
 window.addEventListener('load', async (event) => {
+  print()
   loadAllDocuments()
   .then(function (documents){
     populateDropdownOptions(documents);
     //restores page with previous values that user was looking at
-    db.get("currPage").then(function (doc){
-      page1.value = doc.page1 || ''
-      page2.value = doc.page2 || ''
-      // Still need to figure out how to make it load the option it selected before 
-      // page reload
-      // entryName.value = ''
-      // console.log(doc.entryName)
-      // let newOpt = dropdown.querySelector("option[value='" + doc.entryName + "']")
-      // newOpt.selected = true;
-    })
   })
-  });
+
+  db.get("currPage")
+  .then(function (doc){
+    page1.value = doc.page1 || ''
+    page2.value = doc.page2 || ''
+    selected.value = ''
+    // Still need to figure out how to make it load the option it selected before 
+    // page reload
+    // entryName.value = ''
+    // console.log(doc.entryName)
+    // let newOpt = dropdown.querySelector("option[value='" + doc.entryName + "']")
+    // newOpt.selected = true;
+  })
+  .catch(function(err){
+    if (err.name === 'not_found'){
+      db.put({
+        _id: "currPage",
+        page1: "",
+        page2: "",
+        selected: ""
+      })
+    }
+  })
+});
 
   /**
    * Destroys the current selected option from the dropdown menu and database 
@@ -160,31 +174,37 @@ dropdown.addEventListener('change', async function() {
  * option for this entry. Saves this page as the page the user last saw. Doesn't allow duplicate entryNames.
  */
 save.addEventListener('click', async (event) => {
-    try {
-        //save notebook entries
-        const entry1 = page1.value;
-        const entry2 = page2.value;
-        await db.post({
-            _id: entryName.value,
-            page1: entry1,
-            page2: entry2
-        });
+  //If there is no entryname but there is a dropdown option selected, just save to that option
+  let selectedOption = dropdown.options[dropdown.selectedIndex]
+  const entry1 = page1.value;
+  const entry2 = page2.value;
 
-        //Creates new dropdown option when "save-button" is clicked 
-        createDropdownOption(entryName.value)
+  if (entryName.value === '' && selectedOption !== undefined){
+    await db.get(selectedOption.value)
+    .then(function(doc){
+      doc.page1 = entry1
+      doc.page2 = entry2
+      return db.put(doc);
+    })
+  }
+  else {
+    await db.post({
+      _id: entryName.value,
+      page1: entry1,
+      page2: entry2
+    });
+    //Creates new dropdown option when "save-button" is clicked 
+    createDropdownOption(entryName.value)
 
-        //Change the current selected dropdown option to that^
-        let newOpt = dropdown.querySelector("option[value='" + entryName.value + "']")
-        newOpt.selected = true;
-
-        await saveContentToDatabase()
-
-        //Clear entryName
-        entryName.value = ''
-    }
-    catch (error){
-        alert("Duplicate entry name. Please pick a different name.")
-    }
+    //Change the current selected dropdown option to that^
+    let newOpt = dropdown.querySelector("option[value='" + entryName.value + "']")
+    newOpt.selected = true;
+  
+    await saveContentToDatabase()
+  
+    //Clear entryName
+    entryName.value = ''
+  }
 })
 
 /**
