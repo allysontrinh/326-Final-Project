@@ -6,28 +6,29 @@ body {
   }
 
   .styled-textbox{
-    width: 185px; /* Set the width of the textbox */
-    height: 240px; /* Set the height of the textbox */
-    margin: 10px; /* Set the margin around the textbox */
-    padding: 5px; /* Set the padding inside the textbox */
-    display: block; /* Make the textbox a block-level element */
-    float: left; /* Float the textbox to the left */
+    width: 185px; 
+    height: 240px; 
+    margin: 10px; 
+    padding: 5px; 
+    display: block; 
+    float: left;
     border-radius: 5px;
-    color: #333; /* Set the text color */
-    background-color: transparent; /* Set the background color */
-    font-family: "Lucida Handwriting", cursive; /* Set the font family */
-    /* border-color: transparent; */
+    color: #333; 
+    background-color: transparent; 
+    font-family: "Lucida Handwriting", cursive; 
     overflow: hidden;
     resize: none;
-    position: absolute; 
+    top: 20%; 
+    left: 23%;
   }
   #page1 {
-    top: 20%; /* Move textbox1 50px from the top */
-    left: 23%; /* Move textbox1 50px from the left */
+    top: 20%; 
+    left: 23%; 
+    position: fixed; 
   }
 
   #page2 {
-    top: 20%; /* Move textbox1 50px from the top */
-    left: 50%; /* Move textbox1 50px from the left */
-
+    top: 20%; 
+    left: 50%; 
+    position: fixed; 
   }
