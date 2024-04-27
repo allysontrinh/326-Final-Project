@@ -6,15 +6,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wardrobe</title>
     <link rel="stylesheet" href="/src/client/styles/wardrobe.css">
-    <script type="module" src="/src/client/scripts/wardrobe.js" defer></script>
+    <script type="module" src="/src/client/scripts/wardrobe.js"></script>
 </head>
 <body>
-    <header>
-        <nav>
-            <a href="room.html">Room</a>
-            <a href="notebook.html">About</a>
-            <a href="wardrobe.html">Contact</a>
-        </nav>
-    </header>
+    <div class="left-half">
+        <div class="image-container">
+            <div class="image-wrapper">
+                <img src="/src/client/images/headers/Character_Creation-1.jpeg" alt="Image 1">
+                <button id="lips" class="image-button" onclick="handleButtonClick(1)"></button>
+            </div>
+            <div class="image-wrapper">
+                <img src="/src/client/images/headers/Character_Creation-2.jpeg" alt="Image 2">
+                <button id="eyes" class="image-button" onclick="handleButtonClick(2)"></button>
+            </div>
+            <div class="image-wrapper">
+                <img src="/src/client/images/headers/Character_Creation-4.jpeg" alt="Image 4">
+                <button id="hair" class="image-button" onclick="handleButtonClick(4)"></button>
+            </div>
+            <div class="image-wrapper">
+                <img src="/src/client/images/headers/Character_Creation-5.jpeg" alt="Image 5">
+                <button id="brows" class="image-button" onclick="handleButtonClick(5)"></button>
+            </div>
+            <div class="image-wrapper">
+                <img src="/src/client/images/headers/Character_Creation-6.jpeg" alt="Image 6">
+                <button id="clothes" class="image-button" onclick="handleButtonClick(6)"></button>
+            </div>
+        </div>        
+        <div class="button-grid" id="buttonGrid">
+            <!-- Buttons will be dynamically added here -->
+        </div>
+    </div>
+    <div class="right-half">
+        <div class="image-normal">
+            <img src="/src/client/images/character_parts/BlankCharacter.png" alt="Image 8">
+        </div>
+    </div>
 </body>
 </html>

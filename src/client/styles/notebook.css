@@ -1,0 +1,74 @@
+body {
+    background-image: url('/src/client/images/Notebook.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+  }
+
+  .notebook{
+    display: grid;
+    grid-template-columns: 300px 400px;
+    grid-template-rows: 200px 200px;
+  }
+
+  .styled-textbox{
+    width: 350px; 
+    height: 300px; 
+    margin: 10px; 
+    padding: 5px; 
+    border-radius: 5px;
+    color: #333; 
+    background-color: transparent; 
+    font-family: "Lucida Handwriting", cursive; 
+    overflow: hidden;
+    resize: none;
+  }
+  #page1 {
+    grid-column-start: 3;
+    grid-column-end: 3;
+    grid-row-start: 2;
+  }
+
+  #page2 {
+    grid-column-start: 2;
+    grid-column-end: 2;
+    grid-row-start: 2;
+  }
+
+  #entry-name{
+    background-color: #fbeee0;
+    border: 2px solid #422800;
+    border-radius: 30px;
+    box-shadow: #422800 4px 4px 0 0;
+    color: #422800;
+    display: inline-block;
+    font-weight: 600;
+    font-size: 12px;
+    padding: 0 18px;
+    line-height: 45px;
+  }
+
+  #dropdown-box{
+    color: #422800;
+    font-weight: 600;
+    font-size: 15px;
+  }
+
+  .button{
+    background-color: #fbeee0;
+    border: 2px solid #422800;
+    border-radius: 30px;
+    box-shadow: #422800 4px 4px 0 0;
+    color: #422800;
+    cursor: pointer;
+    display: inline-block;
+    font-weight: 600;
+    font-size: 12px;
+    padding: 0 18px;
+    line-height: 50px;
+    text-align: center;
+    touch-action: manipulation;
+  }
+  .button:hover {
+    background-color: #fff;
+  }
