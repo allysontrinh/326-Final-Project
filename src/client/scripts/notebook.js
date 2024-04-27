@@ -3,6 +3,7 @@ const create = document.getElementById('create');
 const destroy = document.getElementById('destroy');
 const dump = document.getElementById('dump');
 const save = document.getElementById('save');
+const room = document.getElementById('room')
 const page1 = document.getElementById('page1');
 const page2 = document.getElementById('page2');
 const entryName = document.getElementById('entry-name');
@@ -226,3 +227,10 @@ async function saveContentToDatabase() {
  */
 page1.addEventListener("keyup", saveContentToDatabase)
 page2.addEventListener("keyup", saveContentToDatabase)
+
+/**
+ * Button to go back to room
+ */
+room.addEventListener("click", () => {
+  window.location.href = '/src/client/room.html'; 
+})
