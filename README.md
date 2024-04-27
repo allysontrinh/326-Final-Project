@@ -15,7 +15,7 @@
 ## Closet
 #### In the closet, you can customize your character with multiple different options for your eyes, mouth, nose, eyebrows, hair, clothes, and accessories! Feel free to spend as much time as you want dressing up your character; the possibilites are endless! What look will you go for today?
 ## Notebook 
-#### Opening up the Notebook allows you to jot down anything and everything on your mind. Need to refer back to page you wrote earlier? No problem! You can access all of your saved entries through the drop-down menu. Use this space to structure your To-Do list, take notes, or journal whatever you feel like. 
+#### Opening up the Notebook allows you to jot down anything and everything on your mind. You can save whatever you write down, just make sure to title your entry! Need to refer back to page you wrote earlier? No problem! You can access all of your saved entries through the drop-down menu. Made a mistake and want to delete one page, or ALL pages? Easy! Use this space to structure your To-Do list, take notes, or journal whatever you feel like. 
 
 #### Thanks for stopping by <3
 #### - Girls in STAM
