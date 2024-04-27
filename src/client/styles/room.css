@@ -1,23 +1,30 @@
+body {
+    background-image: url('/src/client/images/Room.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+  }
+
 #notebook {
-    width: 100px; 
-    height: 100px;
-    background-image: url('path/to/your/image.png');
-    background-size: cover; 
+    width: 150px; 
+    height: 70px; 
+    background-position: 20px 20px; 
     border: none; 
+    cursor: pointer; 
+    background-color: transparent;
+    position: absolute; 
+    top: 430px; 
+    left: 610px; 
 }
 
 #wardrobe {
-    width: 100px; 
-    height: 100px;
-    background-image: url('path/to/your/image.png');
-    background-size: cover; 
+    width: 355px; 
+    height: 450px;
+    background-position: 20px 20px; 
     border: none; 
-}
-
-#settings {
-    width: 100px; 
-    height: 100px;
-    background-image: url('path/to/your/image.png');
-    background-size: cover; 
-    border: none; 
+    cursor: pointer; 
+    background-color: transparent;
+    position: absolute; 
+    top: 120px;
+    left: 1050px; 
 }
