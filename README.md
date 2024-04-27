@@ -11,7 +11,7 @@
 ## Log-In
 #### Simply enter your username, password, and click the "Sign In" button to enter your cozy room. 
 ## Room
-#### From the room, you can access the closet, mediation corner, your cat, and the Notebook. Click on each to check them out!
+#### From the room, you can access the closet, mediation corner, your cat, and the Notebook. Click on each to check them out! Your cat is feeling a bit tired today, though, so maybe check back on him another day to give him treats :)
 ## Closet
 #### In the closet, you can customize your character with multiple different options for your eyes, mouth, nose, eyebrows, hair, clothes, and accessories! Feel free to spend as much time as you want dressing up your character; the possibilites are endless! What look will you go for today?
 ## Notebook 
