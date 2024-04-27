@@ -1,5 +1,5 @@
 body {
-    background-image: url('/src/client/images/Notebook.jpg');
+    background-image: url('../images/Notebook.jpg');
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
