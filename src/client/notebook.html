@@ -6,15 +6,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Notebook</title>
     <link rel="stylesheet" href="/src/client/styles/notebook.css">
+    <!-- PouchDB script -->
     <script type="module" src="/src/client/scripts/notebook.js" defer></script>
 </head>
 <body>
-    <header>
-        <nav>
-            <a href="room.html">Room</a>
-            <a href="notebook.html">About</a>
-            <a href="wardrobe.html">Contact</a>
-        </nav>
-    </header>
+    <div id="dropdown-box">
+        <label for="dropdown">Reload A Page:</label>
+        <select id="dropdown">
+        </select>
+    </div>
+    <div id="options">
+        <input type="text" id="entry-name" placeholder="Entry name">
+        <button class= "button" id="create">Create A New Page</button>
+        <button class= "button" id="save">Save This Page</button>
+        <button class= "button" id="destroy">Delete Selected Page</button>
+        <button class= "button" id="dump">Delete All Entries</button>
+        <button class= "button" id="room">Back To Room</button>
+    </div>
+    <div class="notebook">
+        <textarea id="page1" class="styled-textbox"></textarea>
+        <textarea id="page2" class="styled-textbox"></textarea>
+    </div>
 </body>
+<script src="//cdn.jsdelivr.net/npm/pouchdb@8.0.1/dist/pouchdb.min.js"></script>
 </html>
