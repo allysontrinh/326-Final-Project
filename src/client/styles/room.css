@@ -48,3 +48,15 @@ body {
 #logout:hover{
     background-color: #fff;
 }
+
+.music-button {
+    width: 100px; 
+    height: 100px; 
+    background-position: 20px 20px; 
+    border: none;
+    cursor: pointer; 
+    background-color: transparent;
+    position: absolute; 
+    top: 430px; 
+    left: 90px; 
+}
