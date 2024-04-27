@@ -1,23 +1,22 @@
 # Welcome Home!
 
-#### This milestone report walks you through the proposal for our web app: Welcome Home. Our goal is to curate a relaxing, useful, and thoughtful organizational aid. As college students, we know how overwhelming it can be to even just fill out a planner with your tasks. Welcome Home aims to solve just that, with a visually appealing and customizable UI. 
+#### This milestone report provides a look at our front-end implementations and designs; a sneak-peak at what Welcome Home will look and feel like!
 
 ## Command to run: 
-#### npm start milestone-01 
+#### npm start milestone-02
 
 ## Overview
-#### Project's vision, how it solves real-world problem.
-## Application Parts
-#### Three critical components of application.
-## Data Requirements
-#### Top types of data our application will handle
-## Wire Frames
-#### Sketches of four main screens of our application, their purpose and design rationale.
-## Real-World Connection
-#### More detailed explanation about how application solves real-world issue. 
-## Integrative Experience
-#### How this application represents our culminated academic and personal experiences. 
-## Meet the Girls (About Us)
-#### Background about each group member of Girls in STAM. 
+#### Our front-end for Welcome Home currently utilizes four different main "screens": a log-in screen, home (or "room") screen, closet screen, and a desk/notebook screen. With custom hand-drawn backgrounds and assets, Welcome Home ensures that users are able to appreciate and use every little detail within the app, feeling right at home. 
 
+## Log-In
+#### Simply enter your username, password, and click the "Sign In" button to enter your cozy room. 
+## Room
+#### From the room, you can access the closet, mediation corner, your cat, and the Notebook. Click on each to check them out!
+## Closet
+#### In the closet, you can customize your character with multiple different options for your eyes, mouth, nose, eyebrows, hair, clothes, and accessories! Feel free to spend as much time as you want dressing up your character; the possibilites are endless! What look will you go for today?
+## Notebook 
+#### Opening up the Notebook allows you to jot down anything and everything on your mind. Need to refer back to page you wrote earlier? No problem! You can access all of your saved entries through the drop-down menu. Use this space to structure your To-Do list, take notes, or journal whatever you feel like. 
+
+#### Thanks for stopping by <3
+#### - Girls in STAM
 
