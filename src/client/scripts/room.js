@@ -1,13 +1,13 @@
 document.getElementById('notebook').addEventListener('click', function() {
-    window.location.href = '../notebook.html'; 
+    window.location.href = '/src/client/notebook.html'; 
 });
 
 document.getElementById('wardrobe').addEventListener('click', function() {
-    window.location.href = '../wardrobe.html'; 
+    window.location.href = '/src/client/wardrobe.html'; 
 });
 
 document.getElementById('logout').addEventListener('click', function() {
-    window.location.href = '../index.html'; 
+    window.location.href = '/src/client/index.html'; 
 });
 
 document.addEventListener('DOMContentLoaded', function() {
