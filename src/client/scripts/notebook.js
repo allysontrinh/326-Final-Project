@@ -232,5 +232,5 @@ page2.addEventListener("keyup", saveContentToDatabase)
  * Button to go back to room
  */
 room.addEventListener("click", () => {
-  window.location.href = '../room.html'; 
+  window.location.href = './room.html'; 
 })
