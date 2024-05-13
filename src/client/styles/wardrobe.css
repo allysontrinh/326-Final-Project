@@ -54,6 +54,9 @@
 
 .image-container {
     display: flex;
+    position: sticky;
+    top: 0px;
+    background-color: white;
 }
 
 .image-wrapper {
@@ -73,6 +76,12 @@
     position: relative;
     width: auto;
     height: auto;
+}
+
+.image-normal img {
+    position: fixed;
+    bottom: 100px;
+    right: 13%;
 }
 
 .image-button {
