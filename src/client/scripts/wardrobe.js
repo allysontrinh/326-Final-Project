@@ -1,5 +1,10 @@
 document.addEventListener("DOMContentLoaded", function() {
     const buttonGrid = document.getElementById("buttonGrid");
+    const selectedMouth = document.getElementById("selectedMouth");
+    const selectedEyes = document.getElementById("selectedEyes");
+    const selectedHair = document.getElementById("selectedHair");
+    const selectedEyebrows = document.getElementById("selectedEyebrows");
+    const selectedClothes = document.getElementById("selectedClothes");
     const lips = document.getElementById("lips");
     const eyes = document.getElementById("eyes");
     const nose = document.getElementById("nose");
@@ -7,8 +12,13 @@ document.addEventListener("DOMContentLoaded", function() {
     const brows = document.getElementById("brows");
     const clothes = document.getElementById("clothes");
     const headwear = document.getElementById("headwear");
+    const exit = document.getElementById("exit");
 
     let currentOption = null; // Track the currently selected option
+
+    exit.addEventListener("click", () =>{
+        window.location.href = './room.html';
+    });
 
     // Function to create buttons for each option
     function createLipsButtons() {
@@ -41,6 +51,9 @@ document.addEventListener("DOMContentLoaded", function() {
             const img = document.createElement("img");
             img.src = path;
             img.alt = "Image " + (index + 1);
+            button.addEventListener("click", function() {
+                selectedMouth.src = path;
+            });
             button.appendChild(img);
             buttonGrid.appendChild(button);
         });
@@ -66,6 +79,9 @@ document.addEventListener("DOMContentLoaded", function() {
             const img = document.createElement("img");
             img.src = path;
             img.alt = "Image " + (index + 1);
+            button.addEventListener("click", function() {
+                selectedEyes.src = path;
+            });
             button.appendChild(img);
             buttonGrid.appendChild(button);
         });
@@ -94,6 +110,9 @@ document.addEventListener("DOMContentLoaded", function() {
             const img = document.createElement("img");
             img.src = path;
             img.alt = "Image " + (index + 1);
+            button.addEventListener("click", function() {
+                selectedHair.src = path;
+            });
             button.appendChild(img);
             buttonGrid.appendChild(button);
         });
@@ -118,6 +137,9 @@ document.addEventListener("DOMContentLoaded", function() {
             const img = document.createElement("img");
             img.src = path;
             img.alt = "Image " + (index + 1);
+            button.addEventListener("click", function() {
+                selectedEyebrows.src = path;
+            });
             button.appendChild(img);
             buttonGrid.appendChild(button);
         });
@@ -141,6 +163,9 @@ document.addEventListener("DOMContentLoaded", function() {
             const img = document.createElement("img");
             img.src = path;
             img.alt = "Image " + (index + 1);
+            button.addEventListener("click", function() {
+                selectedClothes.src = path;
+            });
             button.appendChild(img);
             buttonGrid.appendChild(button);
         });
