@@ -24,25 +24,25 @@ document.addEventListener("DOMContentLoaded", function() {
     function createLipsButtons() {
         clearButtons(); // Clear existing buttons
         const imagePaths = [
-            "../images/character_parts/Mouths/mouth1.png",
-            "../images/character_parts/Mouths/mouth2.png",
-            "../images/character_parts/Mouths/mouth3.png",
-            "../images/character_parts/Mouths/mouth4.png",
-            "../images/character_parts/Mouths/mouth5.png",
-            "../images/character_parts/Mouths/mouth6.png",
-            "../images/character_parts/Mouths/mouth7.png",
-            "../images/character_parts/Mouths/mouth8.png",
-            "../images/character_parts/Mouths/mouth9.png",
-            "../images/character_parts/Mouths/mouth10.png",
-            "../images/character_parts/Mouths/mouth11.png",
-            "../images/character_parts/Mouths/mouth12.png",
-            "../images/character_parts/Mouths/mouth13.png",
-            "../images/character_parts/Mouths/mouth14.png",
-            "../images/character_parts/Mouths/mouth15.png",
-            "../images/character_parts/Mouths/mouth16.png",
-            "../images/character_parts/Mouths/mouth17.png",
-            "../images/character_parts/Mouths/mouth18.png",
-            "../images/character_parts/Mouths/mouth19.png"
+            "./images/character_parts/Mouths/mouth1.png",
+            "./images/character_parts/Mouths/mouth2.png",
+            "./images/character_parts/Mouths/mouth3.png",
+            "./images/character_parts/Mouths/mouth4.png",
+            "./images/character_parts/Mouths/mouth5.png",
+            "./images/character_parts/Mouths/mouth6.png",
+            "./images/character_parts/Mouths/mouth7.png",
+            "./images/character_parts/Mouths/mouth8.png",
+            "./images/character_parts/Mouths/mouth9.png",
+            "./images/character_parts/Mouths/mouth10.png",
+            "./images/character_parts/Mouths/mouth11.png",
+            "./images/character_parts/Mouths/mouth12.png",
+            "./images/character_parts/Mouths/mouth13.png",
+            "./images/character_parts/Mouths/mouth14.png",
+            "./images/character_parts/Mouths/mouth15.png",
+            "./images/character_parts/Mouths/mouth16.png",
+            "./images/character_parts/Mouths/mouth17.png",
+            "./images/character_parts/Mouths/mouth18.png",
+            "./images/character_parts/Mouths/mouth19.png"
         ];
 
         // Create and append buttons with images
@@ -62,15 +62,15 @@ document.addEventListener("DOMContentLoaded", function() {
     function createEyesButtons() {
         clearButtons();
         const imagePaths = [
-            "../images/character_parts/Eyes/eyes1.png",
-            "../images/character_parts/Eyes/eyes2.png",
-            "../images/character_parts/Eyes/eyes3.png",
-            "../images/character_parts/Eyes/eyes4.png",
-            "../images/character_parts/Eyes/eyes5.png",
-            "../images/character_parts/Eyes/eyes6.png",
-            "../images/character_parts/Eyes/eyes7.png",
-            "../images/character_parts/Eyes/eyes8.png",
-            "../images/character_parts/Eyes/eyes9.png"
+            "./images/character_parts/Eyes/eyes1.png",
+            "./images/character_parts/Eyes/eyes2.png",
+            "./images/character_parts/Eyes/eyes3.png",
+            "./images/character_parts/Eyes/eyes4.png",
+            "./images/character_parts/Eyes/eyes5.png",
+            "./images/character_parts/Eyes/eyes6.png",
+            "./images/character_parts/Eyes/eyes7.png",
+            "./images/character_parts/Eyes/eyes8.png",
+            "./images/character_parts/Eyes/eyes9.png"
         ];
 
         // Create and append buttons with images
@@ -90,18 +90,18 @@ document.addEventListener("DOMContentLoaded", function() {
     function createHairButtons() {
         clearButtons();
         const imagePaths = [
-            "../images/character_parts/Hair/hair1.png",
-            "../images/character_parts/Hair/hair2.png",
-            "../images/character_parts/Hair/hair3.png",
-            "../images/character_parts/Hair/hair4.png",
-            "../images/character_parts/Hair/hair5.png",
-            "../images/character_parts/Hair/hair6.png",
-            "../images/character_parts/Hair/hair7.png",
-            "../images/character_parts/Hair/hair8.png",
-            "../images/character_parts/Hair/hair9.png",
-            "../images/character_parts/Hair/hair10.png",
-            "../images/character_parts/Hair/hair11.png",
-            "../images/character_parts/Hair/hair12.png"
+            "./images/character_parts/Hair/hair1.png",
+            "./images/character_parts/Hair/hair2.png",
+            "./images/character_parts/Hair/hair3.png",
+            "./images/character_parts/Hair/hair4.png",
+            "./images/character_parts/Hair/hair5.png",
+            "./images/character_parts/Hair/hair6.png",
+            "./images/character_parts/Hair/hair7.png",
+            "./images/character_parts/Hair/hair8.png",
+            "./images/character_parts/Hair/hair9.png",
+            "./images/character_parts/Hair/hair10.png",
+            "./images/character_parts/Hair/hair11.png",
+            "./images/character_parts/Hair/hair12.png"
         ];
 
         // Create and append buttons with images
@@ -121,14 +121,14 @@ document.addEventListener("DOMContentLoaded", function() {
     function createBrowsButtons() {
         clearButtons(); // Clear existing buttons
         const imagePaths = [
-            "../images/character_parts/Eyebrows/eyebrows1.png",
-            "../images/character_parts/Eyebrows/eyebrows2.png",
-            "../images/character_parts/Eyebrows/eyebrows3.png",
-            "../images/character_parts/Eyebrows/eyebrows4.png",
-            "../images/character_parts/Eyebrows/eyebrows5.png",
-            "../images/character_parts/Eyebrows/eyebrows6.png",
-            "../images/character_parts/Eyebrows/eyebrows7.png",
-            "../images/character_parts/Eyebrows/eyebrows8.png"
+            "./images/character_parts/Eyebrows/eyebrows1.png",
+            "./images/character_parts/Eyebrows/eyebrows2.png",
+            "./images/character_parts/Eyebrows/eyebrows3.png",
+            "./images/character_parts/Eyebrows/eyebrows4.png",
+            "./images/character_parts/Eyebrows/eyebrows5.png",
+            "./images/character_parts/Eyebrows/eyebrows6.png",
+            "./images/character_parts/Eyebrows/eyebrows7.png",
+            "./images/character_parts/Eyebrows/eyebrows8.png"
         ];
 
         // Create and append buttons with images

@@ -1,23 +1,17 @@
-const express = require('express');
+import express from 'express';
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
 const app = express();
+const port = 3000;
 
-/* app.get({
+// Serve static files from the client directory
+app.use(express.static(path.join(__dirname, '../client')));
 
-});
-
-app.post({
-
-})
-
-app.put({
-
-})
-
-app.delete({
-
-})
- */
-const port = 3000; // You can use any available port number
+// Start the server
 app.listen(port, () => {
-    console.log(`Server is running on port ${port}`);
-});
+    console.log(`Server started at http://localhost:${port}/src/client/`);
+  });
