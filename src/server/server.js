@@ -13,5 +13,5 @@ app.use(express.static(path.join(__dirname, '../client')));
 
 // Start the server
 app.listen(port, () => {
-    console.log(`Server started at http://localhost:${port}/src/client/`);
+    console.log(`Server started at http://localhost:${port}`);
   });

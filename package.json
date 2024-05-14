@@ -45,7 +45,7 @@
     "milestone-02": "http-server src/client/ -p 3000 -c-1 -o -s",
     "start": "concurrently \"npm run start:server\" \"npm run open:browser\"",
     "start:server": "node src/server/server.js",
-    "open:browser": "open http://127.0.0.1:3000/src/client/"
+    "open:browser": "open http://127.0.0.1:3000/"
   },
   "devDependencies": {
     "concurrently": "^8.2.2",
