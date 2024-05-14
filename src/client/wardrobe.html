@@ -7,6 +7,9 @@
     <title>Wardrobe</title>
     <link rel="stylesheet" href="./styles/wardrobe.css">
     <script type="module" src="./scripts/wardrobe.js"></script>
+    <!-- PouchDB script -->
+    <script src="https://cdn.jsdelivr.net/npm/pouchdb@7.2.1/dist/pouchdb.min.js"></script>
+    <script src="./scripts/wardrobe.js" defer></script>
 </head>
 <body>
     <div class="left-half">
@@ -53,6 +56,12 @@
         </div>
         <div class="exit-button">
             <button id="exit" class="exit-button-image"></button>
+        </div>
+        <div class="save-button">
+            <button id="save">Save changes</button>
+        </div>
+        <div class="reset-button">
+            <button id="reset">Reset character</button>
         </div>
     </div>
 </body>

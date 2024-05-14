@@ -1,142 +1,160 @@
 body {
-   background-image: url("../images/wardrobe_background.png"); 
-   background-size: cover;  
-}
-
-.exit-button-image{
-    position: fixed;
-    height: 100px;
-    width: 50px;
-    border: none;
-    top: 0px;
-    right: 20px;
-    background-image: url("../images/exit_button.png");
-    background-size: auto 100px;
-    background-repeat: no-repeat;
-}
-
-.left-half {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 50%; /* Set width to half of the screen */
-    height: 100%; /* Cover the entire height of the screen */
-    overflow: auto; /* Allow scrolling if content exceeds the viewport */
-}
-
-.right-half {
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 50%;
-    height: 100%;
-    overflow: auto;
-}
-
-.button-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 10px; /* Adjust the gap between buttons */
-}
-  
-.button-grid button {
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: #8aa78d; /* Button color */
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-}
-  
-.button-grid button:hover {
-    background-color: #cdd9ce; /* Button color on hover */
-}
-
-.button-grid button img {
-    max-width: 100%; /* Ensure images don't exceed the button width */
-    max-height: 100%; /* Ensure images don't exceed the button height */
-    display: block; /* Ensure images don't create extra space */
-}
-
-.image-row {
-    display: flex; /* Display images in a row */
-    justify-content: space-between; /* Distribute space evenly between images */
-}
-
-.image-row img {
-    max-width: 5%; /* Ensure images don't exceed their container */
-    max-height: 5%;
-    margin-right: 10px;
-}
-
-.image-container {
-    display: flex;
-    position: sticky;
-    top: 0px;
-    background-color: white;
-}
-
-.image-wrapper {
-    position: relative;
-    width: 150px; /* Set the width of each image */
-    height: 150px; /* Set the height of each image */
-    margin-right: 10px; /* Add some spacing between images */
-}
-
-.image-wrapper img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: block;
-    object-fit: cover; /* Maintain aspect ratio and fill the container */
-} 
-
-.image-wrapper img.default-image {
-    margin-left: 10px;
-    position: absolute;
-    display: block;
-    width: 80%; 
-    height: 80%;
-    object-fit: cover;
-}
-
-.image-wrapper img.hover-image {
-    display: none;
-}
-
-.image-wrapper:hover img.default-image {
-    display: none;
-    /* object-fit: cover; */
-}
-
-.image-wrapper:hover img.hover-image {
-    display: block;
-    /* object-fit: cover; */
-}
-
-/* avatar */
-.image-normal {
-    position: relative;
-    width: auto;
-    height: auto;
-}
-
-.image-normal img {
-    position: fixed;
-    bottom: 100px;
-    right: 13%;
-} 
-
-.image-button {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: transparent; /* Invisible button background */
-    border: none;
-    cursor: pointer;
-    z-index: 1; /* Ensure buttons are above images */
-}
+    background-image: url("../images/wardrobe_background.png"); 
+    background-size: cover;  
+ }
+ 
+ .exit-button-image{
+     position: fixed;
+     height: 100px;
+     width: 50px;
+     border: none;
+     top: 0px;
+     right: 20px;
+     background-image: url("../images/exit_button.png");
+     background-size: auto 100px;
+     background-repeat: no-repeat;
+ }
+ 
+ .left-half {
+     position: fixed;
+     top: 0;
+     left: 0;
+     width: 50%; /* Set width to half of the screen */
+     height: 100%; /* Cover the entire height of the screen */
+     overflow: auto; /* Allow scrolling if content exceeds the viewport */
+ }
+ 
+ .right-half {
+     position: fixed;
+     top: 0;
+     right: 0;
+     width: 50%;
+     height: 100%;
+     overflow: auto;
+ }
+ 
+ .button-grid {
+     display: grid;
+     grid-template-columns: repeat(4, 1fr);
+     gap: 10px; /* Adjust the gap between buttons */
+ }
+   
+ .button-grid button {
+     padding: 10px 20px;
+     font-size: 16px;
+     background-color: #8aa78d; /* Button color */
+     border: none;
+     cursor: pointer;
+     border-radius: 5px;
+ }
+   
+ .button-grid button:hover {
+     background-color: #cdd9ce; /* Button color on hover */
+ }
+ 
+ .button-grid button img {
+     max-width: 100%; /* Ensure images don't exceed the button width */
+     max-height: 100%; /* Ensure images don't exceed the button height */
+     display: block; /* Ensure images don't create extra space */
+ }
+ 
+ .image-row {
+     display: flex; /* Display images in a row */
+     justify-content: space-between; /* Distribute space evenly between images */
+ }
+ 
+ .image-row img {
+     max-width: 5%; /* Ensure images don't exceed their container */
+     max-height: 5%;
+     margin-right: 10px;
+ }
+ 
+ .image-container {
+     display: flex;
+     position: sticky;
+     top: 0px;
+     background-color: white;
+ }
+ 
+ .image-wrapper {
+     position: relative;
+     width: 150px; /* Set the width of each image */
+     height: 150px; /* Set the height of each image */
+     margin-right: 10px; /* Add some spacing between images */
+ }
+ 
+ .image-wrapper img {
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     display: block;
+     object-fit: cover; /* Maintain aspect ratio and fill the container */
+ } 
+ 
+ .image-wrapper img.default-image {
+     margin-left: 10px;
+     position: absolute;
+     display: block;
+     width: 80%; 
+     height: 80%;
+     object-fit: cover;
+ }
+ 
+ .image-wrapper img.hover-image {
+     display: none;
+ }
+ 
+ .image-wrapper:hover img.default-image {
+     display: none;
+     /* object-fit: cover; */
+ }
+ 
+ .image-wrapper:hover img.hover-image {
+     display: block;
+     /* object-fit: cover; */
+ }
+ 
+ /* avatar */
+ .image-normal {
+     position: relative;
+     width: auto;
+     height: auto;
+ }
+ 
+ .image-normal img {
+     position: fixed;
+     bottom: 100px;
+     right: 13%;
+ } 
+ 
+ .image-button {
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     background-color: transparent; /* Invisible button background */
+     border: none;
+     cursor: pointer;
+     z-index: 1; /* Ensure buttons are above images */
+ }
+ 
+ .save-button {
+     position: fixed;
+     height: 100px;
+     width: 50px;
+     border: none;
+     top: 105px;
+     right: 23px;
+ }
+ 
+ .reset-button {
+     position: fixed;
+     height: 100px;
+     width: 50px;
+     border: none;
+     top: 145px;
+     right: 25px;
+ }

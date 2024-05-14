@@ -7,11 +7,9 @@ document.addEventListener("DOMContentLoaded", function() {
     const selectedClothes = document.getElementById("selectedClothes");
     const lips = document.getElementById("lips");
     const eyes = document.getElementById("eyes");
-    const nose = document.getElementById("nose");
     const hair = document.getElementById("hair");
     const brows = document.getElementById("brows");
     const clothes = document.getElementById("clothes");
-    const headwear = document.getElementById("headwear");
     const exit = document.getElementById("exit");
 
     let currentOption = null; // Track the currently selected option
@@ -214,4 +212,50 @@ document.addEventListener("DOMContentLoaded", function() {
             createClothesButtons();
         }
     });
+
+    // Create a new database instance
+    let db = new PouchDB('saved_wardrobes');
+
+    // Function to save selected items to the database
+    async function saveSelectedItems() {
+        const selectedItems = {
+            _id: new Date().toISOString(),
+            mouth: selectedMouth.src,
+            eyes: selectedEyes.src,
+            hair: selectedHair.src,
+            eyebrows: selectedEyebrows.src,
+            clothes: selectedClothes.src
+        };
+
+        try {
+            const response = await db.put(selectedItems);
+            console.log("Items saved successfully:", response);
+        } catch (error) {
+            console.error("Error saving items:", error);
+        }
+    }
+
+    async function loadWardrobe() {
+        try {
+            const result = await db.allDocs({ include_docs: true, descending: true, limit: 1 });
+            console.log("Load result:", result);
+            if (result.rows.length > 0) {
+                const doc = result.rows[0].doc;
+                console.log("Loaded document:", doc);
+                selectedMouth.src = doc.mouth;
+                selectedEyes.src = doc.eyes;
+                selectedHair.src = doc.hair;
+                selectedEyebrows.src = doc.eyebrows;
+                selectedClothes.src = doc.clothes;
+            } else {
+                console.log("No documents found.");
+            }
+        } catch (err) {
+            console.error("Error loading wardrobe:", err);
+        }
+    }
+
+    // Event listeners
+    document.getElementById("save").addEventListener("click", saveSelectedItems);
+    loadWardrobe();
 });
