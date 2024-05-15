@@ -4,7 +4,7 @@
 
 ## Command to run: 
 #### npm start
-#### To properly run everything with the Auth, go to this doc for the secrets: https://docs.google.com/document/d/1osIG_1NZ1YiO34Q53JWky-RB4PNbcdfKZTFJn54ydII/edit?usp=sharing 
+#### To properly run everything with the Auth, go to this doc for instructions: https://docs.google.com/document/d/1osIG_1NZ1YiO34Q53JWky-RB4PNbcdfKZTFJn54ydII/edit?usp=sharing 
 
 ## Overview
 #### Our front-end for Welcome Home currently utilizes four different main "screens": a log-in screen, home (or "room") screen, closet screen, and a desk/notebook screen. With custom hand-drawn backgrounds and assets, Welcome Home ensures that users are able to appreciate and use every little detail within the app, feeling right at home. 
