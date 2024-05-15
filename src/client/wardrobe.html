@@ -6,10 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wardrobe</title>
     <link rel="stylesheet" href="./styles/wardrobe.css">
-    <script type="module" src="./scripts/wardrobe.js"></script>
     <!-- PouchDB script -->
     <script src="https://cdn.jsdelivr.net/npm/pouchdb@7.2.1/dist/pouchdb.min.js"></script>
-    <script src="./scripts/wardrobe.js" defer></script>
+    <script type="module" src="./scripts/wardrobe.js" defer></script>
 </head>
 <body>
     <div class="left-half">
@@ -17,27 +16,27 @@
             <div class="image-wrapper" id="lips">
                 <img id="lips-before" src="./images/headers/on-hover/Character_Creation-1.png" class="default-image" style="margin-left: 15px; top: 5px;">
                 <img id="lips-after" src="./images/headers/Character_Creation-1.jpeg" class="hover-image" style="width: 80%; height: auto; margin-left: 20px; top: 10px;">
-                <button class="image-button" onclick="handleButtonClick(1)"></button>
+                <button class="image-button" ></button>
             </div>
             <div class="image-wrapper">
                 <img id="eyes-before" src="./images/headers/on-hover/Character_Creation-2.png" class="default-image">
                 <img id="eyes-after" src="./images/headers/Character_Creation-2.jpeg" class="hover-image">
-                <button id="eyes" class="image-button" onclick="handleButtonClick(2)"></button>
+                <button id="eyes" class="image-button" ></button>
             </div>
             <div class="image-wrapper">
                 <img id="eyes-before" src="./images/headers/on-hover/Character_Creation-4.png" class="default-image">
                 <img id="hair-after" src="./images/headers/Character_Creation-4.jpeg" class="hover-image">
-                <button id="hair" class="image-button" onclick="handleButtonClick(4)"></button>
+                <button id="hair" class="image-button" ></button>
             </div>
             <div class="image-wrapper">
                 <img id="brows-before" src="./images/headers/on-hover/Character_Creation-5.png" class="default-image" style="width: 75%; height: auto; margin-left: 20px; top: 30px;">
                 <img id="brows-after" src="./images/headers/Character_Creation-5.jpeg" class="hover-image">
-                <button id="brows" class="image-button" onclick="handleButtonClick(5)"></button>
+                <button id="brows" class="image-button" ></button>
             </div>
             <div class="image-wrapper">
                 <img id="clothes-before" src="./images/headers/on-hover/Character_Creation-6.png" class="default-image" style="width: 75%; height: auto; top: 15px;">
                 <img id="clothes-after" src="./images/headers/Character_Creation-6.jpeg" class="hover-image">
-                <button id="clothes" class="image-button" onclick="handleButtonClick(6)"></button>
+                <button id="clothes" class="image-button" ></button>
             </div>
         </div>   
 
@@ -47,12 +46,17 @@
     </div>
     <div class="right-half">
         <div class="image-normal">
-            <img id="characterImage" src="./images/character_parts/BlankCharacter.png" alt="Image 8">
+            <img id="characterFeet" src="./images/character_parts/untitled folder/Character-1.png" alt="Image 8">
+            <img id="characterArms" src="./images/character_parts/untitled folder/Character-2.png">
+            <img id="characterBody" src="./images/character_parts/untitled folder/Character-3.png">
+            <img id="characterHair" src="./images/character_parts/untitled folder/Character-4.png">
             <img id="selectedMouth" src="">
             <img id="selectedEyes" src="">
-            <img id="selectedHair" src="">
             <img id="selectedEyebrows" src="">
             <img id="selectedClothes" src="">
+            <img id="selectedTop" src="">
+            <img id="selectedBottom" src="">
+            <img id="selectedHair" src="">
         </div>
         <div class="exit-button">
             <button id="exit" class="exit-button-image"></button>

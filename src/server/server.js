@@ -13,30 +13,6 @@ const port = 3000;
 // Serve static files from the client directory
 app.use(express.static(path.join(__dirname, '../client')));
 
-app.use(session({ secret: 'cats', resave: false, saveUninitialized: true }));
-app.use(passport.initialize());
-app.use(passport.session());
-
-app.get('/auth/google',
-  passport.authenticate('google', { scope: [ 'email', 'profile' ] }
-));
-
-app.get( '/auth/google/callback',
-  passport.authenticate( 'google', {
-    successRedirect: '/room.html',
-    failureRedirect: '/auth/google/failure'
-  })
-);
-  
-app.get('/logout', (req, res) => {
-  req.logout();
-  req.session.destroy();
-  res.send('Goodbye!');
-});
-
-app.get('/auth/google/failure', (req, res) => {
-  res.send('Failed to authenticate..');
-});
 
 // Start the server
 app.listen(port, () => {

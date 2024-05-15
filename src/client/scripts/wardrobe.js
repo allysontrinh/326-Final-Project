@@ -5,6 +5,9 @@ document.addEventListener("DOMContentLoaded", function() {
     const selectedHair = document.getElementById("selectedHair");
     const selectedEyebrows = document.getElementById("selectedEyebrows");
     const selectedClothes = document.getElementById("selectedClothes");
+    const characterHair = document.getElementById("characterHair");
+    const characterBody = document.getElementById("characterBody");
+    const characterArms = document.getElementById("characterArms");
     const lips = document.getElementById("lips");
     const eyes = document.getElementById("eyes");
     const hair = document.getElementById("hair");
@@ -51,6 +54,9 @@ document.addEventListener("DOMContentLoaded", function() {
             img.alt = "Image " + (index + 1);
             button.addEventListener("click", function() {
                 selectedMouth.src = path;
+                selectedMouth.onerror = function () {
+                    this.src = "";
+                };
             });
             button.appendChild(img);
             buttonGrid.appendChild(button);
@@ -79,6 +85,9 @@ document.addEventListener("DOMContentLoaded", function() {
             img.alt = "Image " + (index + 1);
             button.addEventListener("click", function() {
                 selectedEyes.src = path;
+                selectedEyes.onerror = function () {
+                    this.src = "";
+                };
             });
             button.appendChild(img);
             buttonGrid.appendChild(button);
@@ -110,6 +119,7 @@ document.addEventListener("DOMContentLoaded", function() {
             img.alt = "Image " + (index + 1);
             button.addEventListener("click", function() {
                 selectedHair.src = path;
+                characterHair.style.display = 'none';
             });
             button.appendChild(img);
             buttonGrid.appendChild(button);
@@ -137,6 +147,9 @@ document.addEventListener("DOMContentLoaded", function() {
             img.alt = "Image " + (index + 1);
             button.addEventListener("click", function() {
                 selectedEyebrows.src = path;
+                selectedEyebrows.onerror = function () {
+                    this.src = "";
+                }
             });
             button.appendChild(img);
             buttonGrid.appendChild(button);
@@ -216,6 +229,28 @@ document.addEventListener("DOMContentLoaded", function() {
     // Create a new database instance
     let db = new PouchDB('saved_wardrobes');
 
+    let mouthSelected,
+        eyesSelected,
+        hairSelected,
+        eyebrowsSelected,
+        clothesSelected = false;
+
+    selectedMouth.addEventListener("load", function() {
+        mouthSelected = selectedMouth.src !== '';
+    });
+    selectedEyes.addEventListener("load", function() {
+        eyesSelected = selectedEyes.src !== '';
+    });
+    selectedHair.addEventListener("load", function() {
+        hairSelected = selectedHair.src !== '';
+    });
+    selectedEyebrows.addEventListener("load", function() {
+        eyebrowsSelected = selectedEyebrows.src !== '';
+    });
+    selectedClothes.addEventListener("load", function() {
+        clothesSelected = selectedClothes.src !== '';
+    });
+
     async function loadWardrobe() {
         try {
             const result = await db.allDocs({ include_docs: true, descending: true, limit: 1 });
@@ -238,44 +273,45 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Function to save selected items to the database
     async function saveSelectedItems() {
-        const selectedItems = {
-            _id: new Date().toISOString(),
-            mouth: selectedMouth.src,
-            eyes: selectedEyes.src,
-            hair: selectedHair.src,
-            eyebrows: selectedEyebrows.src,
-            clothes: selectedClothes.src
-        };
-
-        try {
-            const response = await db.put(selectedItems);
-            console.log("Items saved successfully:", response);
-        } catch (error) {
-            console.error("Error saving items:", error);
+        if (mouthSelected && eyesSelected && hairSelected && eyebrowsSelected && clothesSelected) {
+            const selectedItems = {
+                _id: new Date().toISOString(),
+                mouth: selectedMouth.src,
+                eyes: selectedEyes.src,
+                hair: selectedHair.src,
+                eyebrows: selectedEyebrows.src,
+                clothes: selectedClothes.src
+            };
+    
+            try {
+                const response = await db.put(selectedItems);
+                console.log("Items saved successfully:", response);
+            } catch (error) {
+                console.error("Error saving items:", error);
+            }
+        } else {
+            alert("Please select options for all attributes before saving.");
         }
     }
 
     async function clearSelectedItems() {
-        selectedMouth.src = '';
-        selectedEyes.src = '';
-        selectedHair.src = '';
-        selectedEyebrows.src = '';
-        selectedClothes.src = '';
-
-        const selectedItems = {
-            _id: new Date().toISOString(),
-            mouth: selectedMouth.src,
-            eyes: selectedEyes.src,
-            hair: selectedHair.src,
-            eyebrows: selectedEyebrows.src,
-            clothes: selectedClothes.src
-        };
-
         try {
-            const response = await db.put(selectedItems);
-            console.log("Items saved successfully:", response);
+            const result = await db.allDocs({ include_docs: true, descending: true, limit: 1 });
+            if (result.rows.length > 0) {
+                const doc = result.rows[0].doc;
+                doc.mouth = '';
+                doc.eyes = '';
+                doc.hair = '';
+                doc.eyebrows = '';
+                doc.clothes = '';
+
+                const response = await db.put(doc);
+                console.log("Cleared items saved successfully:", response);
+            } else {
+                console.log("No documents found.");
+            }
         } catch (error) {
-            console.error("Error saving items:", error);
+            console.error("Error clearing items:", error);
         }
     }
 
