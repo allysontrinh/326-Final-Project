@@ -5,6 +5,9 @@ document.addEventListener("DOMContentLoaded", function() {
     const selectedHair = document.getElementById("selectedHair");
     const selectedEyebrows = document.getElementById("selectedEyebrows");
     const selectedClothes = document.getElementById("selectedClothes");
+    const characterHair = document.getElementById("characterHair");
+    const characterBody = document.getElementById("characterBody");
+    const characterArms = document.getElementById("characterArms");
     const lips = document.getElementById("lips");
     const eyes = document.getElementById("eyes");
     const hair = document.getElementById("hair");
@@ -116,9 +119,7 @@ document.addEventListener("DOMContentLoaded", function() {
             img.alt = "Image " + (index + 1);
             button.addEventListener("click", function() {
                 selectedHair.src = path;
-                selectedHair.onerror = function () {
-                    this.src = "";
-                };
+                characterHair.style.display = 'none';
             });
             button.appendChild(img);
             buttonGrid.appendChild(button);
@@ -175,9 +176,6 @@ document.addEventListener("DOMContentLoaded", function() {
             img.alt = "Image " + (index + 1);
             button.addEventListener("click", function() {
                 selectedClothes.src = path;
-                selectedClothes.onerror = function () {
-                    this.src = "";
-                };
             });
             button.appendChild(img);
             buttonGrid.appendChild(button);
