@@ -51,6 +51,9 @@ document.addEventListener("DOMContentLoaded", function() {
             img.alt = "Image " + (index + 1);
             button.addEventListener("click", function() {
                 selectedMouth.src = path;
+                selectedMouth.onerror = function () {
+                    this.src = "";
+                };
             });
             button.appendChild(img);
             buttonGrid.appendChild(button);
@@ -79,6 +82,9 @@ document.addEventListener("DOMContentLoaded", function() {
             img.alt = "Image " + (index + 1);
             button.addEventListener("click", function() {
                 selectedEyes.src = path;
+                selectedEyes.onerror = function () {
+                    this.src = "";
+                };
             });
             button.appendChild(img);
             buttonGrid.appendChild(button);
@@ -110,6 +116,9 @@ document.addEventListener("DOMContentLoaded", function() {
             img.alt = "Image " + (index + 1);
             button.addEventListener("click", function() {
                 selectedHair.src = path;
+                selectedHair.onerror = function () {
+                    this.src = "";
+                };
             });
             button.appendChild(img);
             buttonGrid.appendChild(button);
@@ -137,6 +146,9 @@ document.addEventListener("DOMContentLoaded", function() {
             img.alt = "Image " + (index + 1);
             button.addEventListener("click", function() {
                 selectedEyebrows.src = path;
+                selectedEyebrows.onerror = function () {
+                    this.src = "";
+                }
             });
             button.appendChild(img);
             buttonGrid.appendChild(button);
@@ -163,6 +175,9 @@ document.addEventListener("DOMContentLoaded", function() {
             img.alt = "Image " + (index + 1);
             button.addEventListener("click", function() {
                 selectedClothes.src = path;
+                selectedClothes.onerror = function () {
+                    this.src = "";
+                };
             });
             button.appendChild(img);
             buttonGrid.appendChild(button);
