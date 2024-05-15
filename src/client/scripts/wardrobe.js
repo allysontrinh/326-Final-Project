@@ -216,25 +216,6 @@ document.addEventListener("DOMContentLoaded", function() {
     // Create a new database instance
     let db = new PouchDB('saved_wardrobes');
 
-    // Function to save selected items to the database
-    async function saveSelectedItems() {
-        const selectedItems = {
-            _id: new Date().toISOString(),
-            mouth: selectedMouth.src,
-            eyes: selectedEyes.src,
-            hair: selectedHair.src,
-            eyebrows: selectedEyebrows.src,
-            clothes: selectedClothes.src
-        };
-
-        try {
-            const response = await db.put(selectedItems);
-            console.log("Items saved successfully:", response);
-        } catch (error) {
-            console.error("Error saving items:", error);
-        }
-    }
-
     async function loadWardrobe() {
         try {
             const result = await db.allDocs({ include_docs: true, descending: true, limit: 1 });
@@ -255,7 +236,51 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
 
+    // Function to save selected items to the database
+    async function saveSelectedItems() {
+        const selectedItems = {
+            _id: new Date().toISOString(),
+            mouth: selectedMouth.src,
+            eyes: selectedEyes.src,
+            hair: selectedHair.src,
+            eyebrows: selectedEyebrows.src,
+            clothes: selectedClothes.src
+        };
+
+        try {
+            const response = await db.put(selectedItems);
+            console.log("Items saved successfully:", response);
+        } catch (error) {
+            console.error("Error saving items:", error);
+        }
+    }
+
+    async function clearSelectedItems() {
+        selectedMouth.src = '';
+        selectedEyes.src = '';
+        selectedHair.src = '';
+        selectedEyebrows.src = '';
+        selectedClothes.src = '';
+
+        const selectedItems = {
+            _id: new Date().toISOString(),
+            mouth: selectedMouth.src,
+            eyes: selectedEyes.src,
+            hair: selectedHair.src,
+            eyebrows: selectedEyebrows.src,
+            clothes: selectedClothes.src
+        };
+
+        try {
+            const response = await db.put(selectedItems);
+            console.log("Items saved successfully:", response);
+        } catch (error) {
+            console.error("Error saving items:", error);
+        }
+    }
+
     // Event listeners
     document.getElementById("save").addEventListener("click", saveSelectedItems);
+    document.getElementById("reset").addEventListener("click", clearSelectedItems);
     loadWardrobe();
 });
