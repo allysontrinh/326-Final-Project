@@ -3,7 +3,8 @@
 #### This milestone report provides a look at our front-end implementations and designs; a sneak-peak at what Welcome Home will look and feel like!
 
 ## Command to run: 
-#### npm start milestone-02
+#### npm start
+#### To properly run everything with the Auth, go to this doc for the secrets: https://docs.google.com/document/d/1osIG_1NZ1YiO34Q53JWky-RB4PNbcdfKZTFJn54ydII/edit?usp=sharing 
 
 ## Overview
 #### Our front-end for Welcome Home currently utilizes four different main "screens": a log-in screen, home (or "room") screen, closet screen, and a desk/notebook screen. With custom hand-drawn backgrounds and assets, Welcome Home ensures that users are able to appreciate and use every little detail within the app, feeling right at home. 
