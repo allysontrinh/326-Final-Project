@@ -1,12 +1,11 @@
 import passport from 'passport';
 import { Strategy as GoogleStrategy } from 'passport-google-oauth2';
-
-const GOOGLE_CLIENT_ID = "453712054326-5apqqinl5imi8uo2ln54mjthm7gco8jm.apps.googleusercontent.com";
-const GOOGLE_CLIENT_SECRET = "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";
+import dotenv from 'dotenv';
+dotenv.config();
 
 passport.use(new GoogleStrategy({
-  clientID: GOOGLE_CLIENT_ID,
-  clientSecret: GOOGLE_CLIENT_SECRET,
+  clientID: process.env.GOOGLE_CLIENT_ID,
+  clientSecret: process.env.GOOGLE_CLIENT_SECRET,
   callbackURL: "http://localhost:3000/auth/google/callback",
   passReqToCallback: true,
 },
