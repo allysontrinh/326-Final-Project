@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function() {
         event.preventDefault(); // Prevent the default form submission 
 
         // Redirect to the "Room" page
-        window.location.href = './room.html'; 
+        window.location.href = 'http://localhost:3000/auth/google'; 
     });
 });
 
