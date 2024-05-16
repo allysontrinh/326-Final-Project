@@ -1,4 +1,5 @@
 import express from 'express';
+import PouchDB from 'pouchdb';
 import path from 'path';
 import session from 'express-session'
 import passport from './auth.js'; // This will import the configured passport instance
@@ -63,7 +64,28 @@ app.get('/getReminders', (req, res) => {
     });
 });
 
+app.put('/updateReminder/:id', (req, res) => {
+  const { id } = req.params;
+  const { datetime, text } = req.body;
 
+  db.get(id)
+    .then(doc => {
+      doc.datetime = datetime;
+      doc.text = text;
+      return db.put(doc);
+    })
+    .then(() => res.status(200).send('Reminder updated successfully'))
+    .catch(error => res.status(500).send('Error updating reminder: ' + error.message));
+});
+
+app.delete('/deleteReminder/:id', (req, res) => {
+  const { id } = req.params;
+
+  db.get(id)
+    .then(doc => db.remove(doc))
+    .then(() => res.status(200).send('Reminder deleted successfully'))
+    .catch(error => res.status(500).send('Error deleting reminder: ' + error.message));
+});
 
 // Start the server
 app.listen(port, () => {
