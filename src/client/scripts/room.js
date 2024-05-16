@@ -47,6 +47,7 @@ document.getElementById('cat').addEventListener('click', function() {
     });
 });
 
+//Toggle calendar pop up 
 document.getElementById('calendar').addEventListener('click', function() {
     var popup = document.getElementById('calendar-popup');
     if (popup.classList.contains('show')) {
@@ -56,6 +57,7 @@ document.getElementById('calendar').addEventListener('click', function() {
     }
 });
 
+//Get input from user
 document.getElementById('set-reminder').addEventListener('click', function() {
     var reminderDate = document.getElementById('reminder-date').value;
     var reminderTime = document.getElementById('reminder-time').value;
@@ -67,7 +69,7 @@ document.getElementById('set-reminder').addEventListener('click', function() {
     if (reminderText) {
         setReminder(reminderDateTime, reminderText);
         saveReminderToBackend(reminderDateTime, reminderText); // Save reminder to backend
-        closePopup(); // Close the popup
+        closePopup(); 
     } else {
         alert('Please enter a reminder');
     }
@@ -77,7 +79,7 @@ document.getElementById('set-reminder').addEventListener('click', function() {
 function setReminder(dateTime, text) {
     // Get the current date and time
     var currentDateTime = new Date();
-    currentDateTime.setSeconds(0, 0); // Reset seconds and milliseconds to zero for comparison
+    currentDateTime.setSeconds(0, 0); 
 
     // Check if the reminder time is in the future
     if (dateTime > currentDateTime) {
@@ -102,22 +104,17 @@ function setReminder(dateTime, text) {
     }
 }
 
-// Example usage:
 var reminderDateTime = new Date(); // Set your desired reminder date and time here
 reminderDateTime.setSeconds(0, 0); // Reset seconds and milliseconds to zero for accuracy
 
-setReminder(reminderDateTime, "Remember to do something");
-
-
 function saveReminderToBackend(dateTime, text) {
-    // Replace this with your actual backend API endpoint and AJAX request
-    var apiUrl = 'https://example.com/saveReminder';
+    var apiUrl = '/saveReminder';
     var data = {
         datetime: dateTime.toISOString(),
         text: text
     };
 
-    // Example of using fetch for AJAX request
+    //Using fetch, GET/POST/PUT/DELETE methods 
     fetch(apiUrl, {
         method: 'POST',
         headers: {
@@ -135,6 +132,28 @@ function saveReminderToBackend(dateTime, text) {
         console.error('Error saving reminder:', error.message);
     });
 }
+
+function getReminders() {
+    var apiUrl = '/getReminders'; //connect to endpoint 
+  
+    fetch(apiUrl)
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Failed to fetch reminders');
+        }
+        return response.json();
+      })
+      .then(reminders => {
+        alert('Reminder:'+ reminders);
+      })
+      .catch(error => {
+        console.error('Error fetching reminders:', error.message);
+      });
+  }
+
+document.addEventListener('DOMContentLoaded', function () {
+    getReminders();
+});
 
 function closePopup() {
     document.getElementById('calendar-popup').classList.remove('show');

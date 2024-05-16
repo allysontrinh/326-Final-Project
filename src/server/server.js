@@ -38,8 +38,36 @@ app.get('/auth/google/failure', (req, res) => {
   res.send('Failed to authenticate..');
 });
 
+const db = new PouchDB('reminders');
+
+app.post('/saveReminder', (req, res) => {
+  const { datetime, text } = req.body;
+
+    db.post({datetime, text})
+    .then(() => {
+      res.status(200).send('Reminder saved successfully');
+    })
+    .catch(error => {
+      res.status(500).send('Error saving reminder: ' + error.message);
+    });
+});
+
+app.get('/getReminders', (req, res) => {
+  db.allDocs({include_docs: true})
+    .then(result=> {
+      const reminders = result.rows.map(row => row.doc);
+      res.json(reminders);
+    })
+    .catch(error => {
+      res.status(500).send('Error fetching reminders: ' + error.message);
+    });
+});
+
+
+
 // Start the server
 app.listen(port, () => {
     console.log(__dirname)
     console.log(`Server started at http://localhost:${port}`);
   });
+
