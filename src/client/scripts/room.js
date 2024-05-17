@@ -128,19 +128,20 @@ function scheduleReminderCheck(dateTime, text) {
     }, 60000); // Check every minute 
 }
 
-
 var reminderDateTime = new Date(); // Set desired reminder date and time here
 reminderDateTime.setSeconds(0, 0); // Reset seconds and milliseconds to zero for accuracy
 
-function saveReminderToBackend(dateTime, text) {
+async function saveReminderToBackend(dateTime, text) {
     var apiUrl = '/saveReminder';
     var data = {
-        datetime: dateTime.toISOString(),
+        _id: Math.random().toString(),
+        dateTime: dateTime,
         text: text
     };
+    console.log(data)
 
     //Using fetch, GET/POST/PUT/DELETE methods 
-    fetch(apiUrl, {
+    await fetch(apiUrl, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -148,6 +149,7 @@ function saveReminderToBackend(dateTime, text) {
         body: JSON.stringify(data)
     })
     .then(response => {
+        console.log(response)
         if (!response.ok) {
             throw new Error('Failed to save reminder');
         }

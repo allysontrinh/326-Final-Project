@@ -2,6 +2,7 @@ import express from 'express';
 import PouchDB from 'pouchdb';
 import path from 'path';
 import session from 'express-session'
+import bodyParser from 'body-parser';
 import passport from './auth.js'; // This will import the configured passport instance
 import { fileURLToPath } from 'url';
 
@@ -13,10 +14,10 @@ const port = 3000;
 
 // Serve static files from the client directory
 app.use(express.static(path.join(__dirname, '../client')));
-
 app.use(session({ secret: 'cats', resave: false, saveUninitialized: true }));
 app.use(passport.initialize());
 app.use(passport.session());
+app.use(bodyParser.json());
 
 app.get('/auth/google',
   passport.authenticate('google', { scope: [ 'email', 'profile' ] }
@@ -41,10 +42,9 @@ app.get('/auth/google/failure', (req, res) => {
 
 const db = new PouchDB('reminders');
 
-app.post('/saveReminder', (req, res) => {
-  const { datetime, text } = req.body;
-
-    db.post({datetime, text})
+app.post('/saveReminder', async (req, res) => {
+  const reminder = req.body;
+    db.put(reminder)
     .then(() => {
       res.status(200).send('Reminder saved successfully');
     })
@@ -89,7 +89,6 @@ app.delete('/deleteReminder/:id', (req, res) => {
 
 // Start the server
 app.listen(port, () => {
-    console.log(__dirname)
     console.log(`Server started at http://localhost:${port}`);
   });
 
