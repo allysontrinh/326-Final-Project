@@ -61,6 +61,8 @@
     "express-session": "^1.18.0",
     "morgan": "^1.10.0",
     "passport": "^0.7.0",
-    "passport-google-oauth2": "^0.2.0"
+    "passport-google-oauth2": "^0.2.0",
+    "pouchdb": "^8.0.1",
+    "pouchdb-adapter-http": "^8.0.1"
   }
 }

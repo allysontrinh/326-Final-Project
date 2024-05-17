@@ -47,6 +47,7 @@ document.getElementById('cat').addEventListener('click', function() {
     });
 });
 
+//Toggle calendar pop up 
 document.getElementById('calendar').addEventListener('click', function() {
     var popup = document.getElementById('calendar-popup');
     if (popup.classList.contains('show')) {
@@ -56,6 +57,7 @@ document.getElementById('calendar').addEventListener('click', function() {
     }
 });
 
+//Get input from user
 document.getElementById('set-reminder').addEventListener('click', function() {
     var reminderDate = document.getElementById('reminder-date').value;
     var reminderTime = document.getElementById('reminder-time').value;
@@ -67,58 +69,79 @@ document.getElementById('set-reminder').addEventListener('click', function() {
     if (reminderText) {
         setReminder(reminderDateTime, reminderText);
         saveReminderToBackend(reminderDateTime, reminderText); // Save reminder to backend
-        closePopup(); // Close the popup
+        closePopup(); 
     } else {
         alert('Please enter a reminder');
     }
 });
 
-// Function to set a reminder
 function setReminder(dateTime, text) {
     // Get the current date and time
     var currentDateTime = new Date();
-    currentDateTime.setSeconds(0, 0); // Reset seconds and milliseconds to zero for comparison
+    currentDateTime.setSeconds(0, 0);
 
     // Check if the reminder time is in the future
     if (dateTime > currentDateTime) {
         // Show a message indicating that the reminder is set
         alert('Reminder set for: ' + dateTime.toLocaleString() + '\nReminder: ' + text);
-        
-        // Check for reminder match periodically
-        var intervalId = setInterval(function() {
-            var currentDateTime = new Date();
-            currentDateTime.setSeconds(0, 0); // Reset seconds and milliseconds to zero for comparison
 
-            if (currentDateTime.getTime() === dateTime.getTime()) {
-                clearInterval(intervalId); // Stop the interval once reminder time is reached
-                alert('Reminder: ' + text); // Display the reminder message
-            }
-        }, 60000); // Check every second (1000 milliseconds)
-    }
-    else{
-        if (dateTime < currentDateTime) {
-            alert('Please select a future date and time for the reminder');
-        }
+        // Check if there's a previous reminder with the same date and time
+        fetch('/getReminders')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Failed to fetch reminders');
+                }
+                return response.json();
+            })
+            .then(reminders => {
+                const matchingReminder = findMatchingReminder(reminders, dateTime);
+                if (matchingReminder) {
+                    // If a matching reminder is found, update it with PUT
+                    updateReminder(matchingReminder._id, text);
+                } else {
+                    // Otherwise, proceed with setting the reminder
+                    scheduleReminderCheck(dateTime, text);
+                }
+            })
+            .catch(error => {
+                console.error('Error fetching reminders:', error.message);
+            });
+    } else if (dateTime < currentDateTime) {
+        alert('Please select a future date and time for the reminder');
     }
 }
 
-// Example usage:
-var reminderDateTime = new Date(); // Set your desired reminder date and time here
+function findMatchingReminder(reminders, dateTime) {
+    return reminders.find(reminder => new Date(reminder.datetime).getTime() === dateTime.getTime());
+}
+
+function scheduleReminderCheck(dateTime, text) {
+    //check if the current time matches the reminder time
+    var intervalId = setInterval(function() {
+        var currentDateTime = new Date();
+        currentDateTime.setSeconds(0, 0); // Reset seconds and milliseconds to zero for comparison
+        //if it's the right time, display the reminder
+        if (currentDateTime.getTime() === dateTime.getTime()) {
+            clearInterval(intervalId); //stop the interval once reminder time is reached
+            getReminders(); //get and alert with the reminder message
+        }
+    }, 60000); // Check every minute 
+}
+
+var reminderDateTime = new Date(); // Set desired reminder date and time here
 reminderDateTime.setSeconds(0, 0); // Reset seconds and milliseconds to zero for accuracy
 
-setReminder(reminderDateTime, "Remember to do something");
-
-
-function saveReminderToBackend(dateTime, text) {
-    // Replace this with your actual backend API endpoint and AJAX request
-    var apiUrl = 'https://example.com/saveReminder';
+async function saveReminderToBackend(dateTime, text) {
+    var apiUrl = '/saveReminder';
     var data = {
-        datetime: dateTime.toISOString(),
+        _id: Math.random().toString(),
+        dateTime: dateTime,
         text: text
     };
+    console.log(data)
 
-    // Example of using fetch for AJAX request
-    fetch(apiUrl, {
+    //Using fetch, GET/POST/PUT/DELETE methods 
+    await fetch(apiUrl, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -126,6 +149,7 @@ function saveReminderToBackend(dateTime, text) {
         body: JSON.stringify(data)
     })
     .then(response => {
+        console.log(response)
         if (!response.ok) {
             throw new Error('Failed to save reminder');
         }
@@ -135,6 +159,78 @@ function saveReminderToBackend(dateTime, text) {
         console.error('Error saving reminder:', error.message);
     });
 }
+
+function getReminders() {
+    var apiUrl = '/getReminders'; //connect to endpoint 
+  
+    fetch(apiUrl)
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Failed to fetch reminders');
+        }
+        return response.json();
+      })
+      .then(reminders => {
+        showReminder(reminders);
+      })
+      .catch(error => {
+        console.error('Error fetching reminders:', error.message);
+      });
+  }
+
+  function showReminder(reminders) {
+    reminders.forEach(reminder => {
+      alert('Reminder: ' + reminder.text);
+      deleteReminder(reminder._id); //Delete remind after showing it to the user
+    });
+  }
+
+  function updateReminder(id, datetime, text) {
+    var apiUrl = '/updateReminder/' + id;
+    var data = {
+      datetime: datetime,
+      text: text
+    };
+  
+    fetch(apiUrl, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
+    })
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Failed to update reminder');
+        }
+        console.log('Reminder updated successfully');
+      })
+      .catch(error => {
+        console.error('Error updating reminder:', error.message);
+      });
+  }
+
+  function deleteReminder(id) {
+    var apiUrl = '/deleteReminder/' + id;
+  
+    fetch(apiUrl, {
+        method: 'DELETE'
+      })
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Failed to delete reminder');
+        }
+        console.log('Reminder deleted successfully');
+      })
+      .catch(error => {
+        console.error('Error deleting reminder:', error.message);
+      });
+  }
+
+  
+document.addEventListener('DOMContentLoaded', function () {
+    getReminders();
+});
 
 function closePopup() {
     document.getElementById('calendar-popup').classList.remove('show');
