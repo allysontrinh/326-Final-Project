@@ -2,6 +2,8 @@ import passport from 'passport';
 import { Strategy as GoogleStrategy } from 'passport-google-oauth2';
 
 //Input the secrets from the google doc here (in the readme)
+const GOOGLE_CLIENT_ID = "453712054326-5apqqinl5imi8uo2ln54mjthm7gco8jm.apps.googleusercontent.com";
+const GOOGLE_CLIENT_SECRET = "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";
 
 passport.use(new GoogleStrategy({
   clientID: GOOGLE_CLIENT_ID,
