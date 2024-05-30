@@ -2,6 +2,12 @@
 
 #### This is a final project designed and built for CS326 (Web Programming). The goal was to create an interactive and aesthetically-pleasing web app that allows users to enter a 'virtual safe space' where they can journal, set reminders, feed their virtual cat (how cute!?), play music, and customize their character.
 
+## Tech-stack
+#### Javascript/HTML/CSS
+#### Express
+#### PouchDB
+#### Node
+
 ## Command to run: 
 #### npm start
 #### To properly run everything with the Auth, go to this doc for instructions: https://docs.google.com/document/d/1osIG_1NZ1YiO34Q53JWky-RB4PNbcdfKZTFJn54ydII/edit?usp=sharing 
