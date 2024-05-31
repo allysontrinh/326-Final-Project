@@ -31,12 +31,15 @@
 #### Opening up the Notebook allows you to jot down anything and everything on your mind. Thanks to PouchDB, you can save whatever you write down, just make sure to title your entry! Need to refer back to page you wrote earlier? No problem! You can access all of your saved entries through the drop-down menu. Made a mistake and want to delete one page, or ALL pages? Easy! Use this space to structure your To-Do list, take notes, or journal whatever you feel like. 
 <img width="1438" alt="Screen Shot 2024-05-31 at 1 09 17 PM" src="https://github.com/allysontrinh/326-Final-Project/assets/124815798/3308cc4a-f386-4109-86b0-0404cf1a797b">
 
+## Calendar
+#### Save reminders easily using the calendar in your room. Make sure to pick a future date! Only future dates are allowed.
+<img width="642" alt="Screen Shot 2024-05-31 at 1 19 41 PM" src="https://github.com/allysontrinh/326-Final-Project/assets/124815798/ecc49dc8-7cb7-4d4b-b0ab-2927de0ea1b6">
+
 # API Endpoints:
 - /saveReminder : saves the reminder inputted by the user in the calendar into the PouchDB 
 - /getReminders : returns all reminders in the PouchDB
 - /updateReminder/:id : updates an existing reminder in the PouchDB with docID 'id'
 - /deleteReminder/:id : deletes an existing reminder in the PouchDB with docID 'id'
-
 
 #### Thanks for stopping by <3
 #### - Girls in STAM (Sarah, Tanishka, Allyson, Megan)
